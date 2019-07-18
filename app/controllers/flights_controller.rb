@@ -3,7 +3,7 @@ class FlightsController < ApplicationController
 
   def index
     @airport = Airport.all
-    if params[:start_datetime] != nil
+    if params[:from] != ""
       @flights = Flight.search(params) 
     end
   end
