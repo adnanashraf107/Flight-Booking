@@ -1,0 +1,82 @@
+// Place all the styles related to the Flights controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: myFirstFont;
+  src: url(sansation_light.woff);
+}
+* {
+  font-family: myFirstFont;
+}
+.container{
+  width: 100%;
+  overflow: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
+table{
+  border: 1px solid black;
+  width: 100%;
+}
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+th{
+  text-align: left;
+  padding: 10px;
+}
+td{
+  min-width: 80px;
+  padding: 10px;
+}
+tr:hover {background-color: #f5f5f5;}
+input[type=text]{
+  padding: 10px 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+select{
+  height: 25px;
+  padding: 10px 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: 2px solid #4CAF50; /* Green */
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 4px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 600px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
