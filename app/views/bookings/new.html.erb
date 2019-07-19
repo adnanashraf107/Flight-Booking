@@ -1,1 +1,24 @@
-hello world!
+<div>
+
+  <h1>Booking Details </h1>
+  <%= form_for @booking do |f| %>
+    
+    <p>Flight Id: <strong><%= @flight.id %></strong></p>
+    <p>Departing Date: <strong><%= @flight.start_datetime %></strong></p>
+    <p>From: <strong><%= @flight.from_airport.code %></strong></p>
+    <p>To: <strong><%= @flight.to_airport.code %></strong></p>
+    <p>Total Passengers : <strong><%= @total_passengers %></strong></p>
+    <h3>Passenger Information</h3>   
+    
+    <%= fields_for :passenger, @booking.passenger do |p| %>
+
+      <p>Passenger Name: <%= p.text_field :name %></p>
+      <p>Passenger Email: <%= p.text_field :email %></p>
+
+    <% end %>
+
+    <p><%= f.submit %></p>
+
+  <% end %>
+
+</div>

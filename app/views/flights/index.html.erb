@@ -27,7 +27,7 @@
   <% if @flights.present? %>
     <h3>Search Result</h3>  
     <%= form_tag(new_booking_path, method: :get) do %>
-      <table>
+      <table class='col-8'>
         <thead>
           <tr>
             <th>From</th>
@@ -45,7 +45,7 @@
               <td><%= flight.to_airport.id %></td>
               <td><%= flight.duration %> Hours</td>
               <td><%= flight.start_datetime %></td>
-              <td><%= radio_button_tag "selected_flight_#{ (index+1) }", 'no' %></td>
+              <td><%= radio_button_tag "selected_flight", flight.id %></td>
             </tr>
           <% end %>
         </tbody>

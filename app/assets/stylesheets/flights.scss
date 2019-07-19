@@ -1,20 +1,15 @@
 // Place all the styles related to the Flights controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@font-face {
-  font-family: myFirstFont;
-  src: url(sansation_light.woff);
-}
-* {
-  font-family: myFirstFont;
+
+h1{
+  text-align: center;
 }
 .container{
   width: 100%;
-  overflow: auto;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  float: right;
+  justify-content: center;
 }
 table{
   border: 1px solid black;
