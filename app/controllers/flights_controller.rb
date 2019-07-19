@@ -1,11 +1,6 @@
 class FlightsController < ApplicationController
-
-
   def index
     @airport = Airport.all
-    if params[:from] != ""
-      @flights = Flight.search(params) 
-    end
+    @flights = Flight.search(params) if params[:from].present?
   end
-
 end

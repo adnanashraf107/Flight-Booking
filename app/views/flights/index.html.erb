@@ -5,24 +5,28 @@
       <%= label_tag(:q, "Origin:") %>
       <%= select_tag :from, options_from_collection_for_select(@airport, "id", "code"), class: 'col-4', include_blank: true%>
     </p>
+
     <p>
       <%= label_tag(:q, "Destination:") %>
       <%= select_tag :to, options_from_collection_for_select(@airport, "id", "code"), class: 'col-4',include_blank: true %>
     </p>
+
     <p>
       <%= label_tag(:q, "Total Passengers:") %>
       <%= select_tag :total_passengers, options_for_select([1,2,3,4]), class: 'col-4', include_blank: true %>
     </p>
+
     <p>
       <%= label_tag(:q, "Date:") %> 
       <%= text_field_tag :start_datetime, nil, data: { behavior: "flatpickr"}, class: 'col-4' %>
     </p>
+
     <%= submit_tag "Search" %>
   <% end %>
   
   <% if @flights.present? %>
     <h3>Search Result</h3>  
-    <%= form_tag(root_path, method: :get) do %>
+    <%= form_tag(new_booking_path, method: :get) do %>
       <table>
         <thead>
           <tr>
@@ -33,18 +37,20 @@
             <th>Choose Flight</th>
           </tr>
         </thead>
+
         <tbody>
-          <% @flights.each do |flight| %>  
+          <% @flights.each_with_index do |flight, index| %>
             <tr>
               <td><%= flight.from_airport.id %></td>
               <td><%= flight.to_airport.id %></td>
               <td><%= flight.duration %> Hours</td>
               <td><%= flight.start_datetime %></td>
-              <td><%= radio_button_tag 'selected_flight', 'no' %></td>
+              <td><%= radio_button_tag "selected_flight_#{ (index+1) }", 'no' %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
+
       <%= submit_tag "Confirm" %>
     <% end %>
   <% end %>
