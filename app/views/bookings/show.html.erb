@@ -1,0 +1,50 @@
+<div>
+
+  <h1>Booking Information</h1>
+
+  <p>Your Booking Id: <strong><%= @booking.id%></strong></p>
+  <h3>Passenger Information</h3>
+
+  <table class='col-5'>
+
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @booking.passenger.name %></td>
+        <td><%= @booking.passenger.email %></td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <h3>Flight Information</h3>
+
+  <table class='col-8'>
+
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @booking.flight.id %></td>
+        <td><%= @booking.flight.from_airport.code %></td>
+        <td><%= @booking.flight.to_airport.code %></td>
+        <td><%= @booking.flight.start_datetime %></td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
