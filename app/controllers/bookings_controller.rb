@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
     booking = Booking.new(passenger_params)    
     if booking.save
       flash.notice = "Your booking is created."
+      PassengerMailer.confirmation_email(booking).deliver_now
       redirect_to :action => 'show', :id => booking.id
     else
       render :new
